@@ -5,17 +5,17 @@ import matplotlib.pyplot as plt
 df = sns.load_dataset('iris')
 
 # Display the dataset
-print(df)
+print(df.head())
 
 # Remove the categorical column
 df_numeric = df.drop(columns=['species'])
-print(df_numeric)
 
-# Calculate the correlation matrix
+# Calculate correlation matrix
 correlation_matrix = df_numeric.corr()
+print("\nCorrelation Matrix:")
 print(correlation_matrix)
 
-# Visualize the correlation matrix
+# Visualize heatmap
 plt.figure(figsize=(8, 6))
 sns.heatmap(
     correlation_matrix,
